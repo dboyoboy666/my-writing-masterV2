@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     // 【监控点 4】呼叫成功
     console.log("✅ 4. 阿里云连接成功，开始流式输出...");
 
-    const stream = OpenAIStream(response);
+    const stream = OpenAIStream(response as any);
     return new StreamingTextResponse(stream);
 
   } catch (error: any) {
